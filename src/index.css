@@ -1,32 +1,112 @@
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
-  padding: 1em;
-}
-
-main {
-  flex: 1;
-  padding: 1em;
-}
-footer {
-  padding: 1em;
-  text-align: center;
+/* General styling for the AvailableCats page */
+.cats-container {
+  margin-top: 20px;
 }
 
 .cat-card {
   border: 1px solid #ddd;
   text-align: center;
-  height: 250px;
+  height: 250px; /* Keep the height consistent */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background-color: rgba(255, 255, 255, 0.8); /* Card background */
+  color: black; /* Card text color */
+  overflow: hidden; /* Prevent image overflow */
+  transition: transform 0.3s ease; /* Smooth zoom effect transition */
+  padding: 10px;
+  border-radius: 8px;
 }
 
+.cat-card.zoom-effect:hover {
+  transform: scale(1.05); /* Zoom in on the entire card */
+}
+
+/* Styling for images inside the cat card */
+.cat-card img {
+  border-radius: 8px;
+  height: 200px;
+  width: 200px;
+  object-fit: contain; /* Ensures images are contained within the box */
+  margin: 0 auto;
+}
+
+/* Styling for the cat card information */
 .cat-info {
-  background: #f8f9fa;
-  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.cat-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.cat-info p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Styling for the filtering controls (dropdown and search input) */
+.select-filter {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+input.form-control {
+  width: 250px;
+}
+
+select.form-select {
+  width: 200px;
+  margin-right: 10px;
+}
+
+/* Basic styling for the loading state */
+p {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Basic styling for the AvailableCats section */
+section.text-center {
+  padding: 20px;
+}
+
+/* Button styling for the filters */
+button.filter-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button.filter-btn:hover {
+  background-color: #0056b3;
+}
+
+/* General text styling for headers */
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Ensuring that the page has consistent styling and responsiveness */
+@media screen and (max-width: 768px) {
+  .cat-card {
+    height: auto; /* Allow flexibility on smaller screens */
+  }
+
+  .cats-container {
+    display: block;
+    padding: 10px;
+  }
+
+  .cat-card img {
+    max-width: 100%;
+    height: auto;
+  }
 }
